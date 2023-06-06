@@ -5,9 +5,14 @@
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>Ask me – Responsive Questions and Answers Template</title>
-    <meta name="description" content="Ask me Responsive Questions and Answers Template">
-    <meta name="author" content="2code.info">
+    <title>Coding Demon – Website development Solution </title>
+    <meta name="description"
+        content="Welcome to Coding Demon, we provide solutions and insights to troubleshoot and resolve various errors.
+         Discover effective strategies, best practices, and troubleshooting techniques to tackle errors efficiently. 
+         Let us help you overcome obstacles and achieve optimal performance. Explore our comprehensive resources and empower yourself with Coding Demon expertise">
+    <meta name=keywords
+        content="Coding Demon,it programming language,php,laravel 5,jquery,javascript,mysql,git,html,css,MySQL,HTML,CSS,git,AJAX,bootstrap, jQuery,JavaScript,Designing,Demo,codingdemon">
+    <meta name="author" content="Coding Demon">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -34,7 +39,7 @@
            
         } */
 
-    
+
 
         /* Adjust this value to define the maximum width of the excerpt */
     </style>

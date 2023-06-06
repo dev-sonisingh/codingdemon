@@ -2,7 +2,6 @@
 
 
 @push('scripts')
-     
 @endpush
 
 @section('content')
@@ -67,8 +66,8 @@
                                                 <div class="d-flex flex-wrap justify-content-between mb-2">
                                                     <h5>Image</h5>
                                                 </div>
-                                                <input type="file" id="imageInput" name="image" class="form-control"/>
-                                               
+                                                <input type="file" id="imageInput" name="image" class="form-control" />
+
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-6 col-xl-12">
@@ -78,8 +77,8 @@
                                                     <a class="fw-bold fs--1" href="{{ route('category.show') }}">Add new
                                                         category</a>
                                                 </div>
-                                                <select class="form-select mb-3" data-choices="data-choices"
-                                                multiple  name="category_id" id="category_id"
+                                                <select class="form-select mb-3" data-choices="data-choices" multiple
+                                                    name="categories[]"
                                                     data-options='{"removeItemButton":true,"placeholder":true}'>
                                                     <option value="">Select categories...</option>
                                                     @foreach ($categories as $category)
@@ -98,7 +97,7 @@
                                                     <a class="fw-bold fs--1" href="{{ route('tag.show') }}">Add new tag</a>
                                                 </div>
                                                 <select class="form-select" name="tag_id" id="tag_id"
-                                                    data-choices="data-choices" multiple 
+                                                    data-choices="data-choices" multiple
                                                     data-options='{"removeItemButton":true,"placeholder":true}'>
                                                     <option value="">Select tags...</option>
                                                     @foreach ($tags as $tag)

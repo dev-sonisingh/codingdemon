@@ -5,20 +5,19 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Question;
+use App\Models\Category;
+use App\Models\Tag;
+
 
 class FrontHomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
 
-
-        // $categories = [1, 2]; // Example category IDs
-
-        // $question = Question::whereHas('categories', function ($query) use ($categories) {
-        //     $query->whereIn('category_id', $categories);
-        // }, '=', count($categories))->get();
-
-        $question = Question::all();
-        return view('Front.index', compact('question'));
+        // $categories = Category::all();
+        // $tags = Tag::all();
+        $questions = Question::all();
+        return view('Front.index', compact('questions'));
     }
 }
+

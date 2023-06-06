@@ -7,7 +7,7 @@
                 box_background="transparent" box_color="#FFF">
                 <div class="row">
                     <div class="col-md-3">
-                        <h2>Welcome to Ask me</h2>
+                        <h2>Welcome to<br> Coding Demon</h2>
                         <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing
                             iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque.</p>
                         <div class="clearfix"></div>
@@ -43,7 +43,7 @@
                     </ul>
                     <div class="tab-inner-warp">
                         <div class="tab-inner">
-                            @foreach ($question as $item)
+                            @foreach ($questions as $item)
                                 <article class="question question-type-normal">
                                     <h2>
                                         <a href="single_question.html">{{ $item->question_title }}</a>
