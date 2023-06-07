@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Question;
-use App\Models\Category;
-use App\Models\Tag;
 
 
 class FrontHomeController extends Controller
@@ -14,10 +12,21 @@ class FrontHomeController extends Controller
     public function index(Request $request)
     {
 
-        // $categories = Category::all();
-        // $tags = Tag::all();
-        $questions = Question::all();
+        $questions = Question::with('categories', 'tags', 'images')->get();
+ 
         return view('Front.index', compact('questions'));
+    }
+
+    public function getQuestion($question_slug){
+
+        $question = Question::where('question_slug', $question_slug)->with('categories', 'tags', 'images')->firstOrFail();
+       
+        return view('Front.single-question',compact('question'));
+    }
+
+    public function askQuestion()
+    { 
+        return view('Front.askquestion');
     }
 }
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\QuestionController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\FrontHomeController;
+use App\Http\Controllers\Frontend\AskquestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,11 @@ Route::get('sign-in',function(){
 });
 
 Route::get('/', [FrontHomeController::class, 'index']);
+
+Route::get('/questions/{question_slug}', [FrontHomeController::class, 'getQuestion'])->name('get.question');
+Route::get('/ask-question', [AskquestionController::class, 'askQuestion']);
+Route::post('/ask-question', [AskquestionController::class, 'SubmitQuestion'])->name('post.question');
+
 /*--------------------------------------------
 All Normal Users Routes List
  

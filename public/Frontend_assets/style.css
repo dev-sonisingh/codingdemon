@@ -1113,7 +1113,7 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
     display: -webkit-box;
     max-width: 680px;
     text-align: justify;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

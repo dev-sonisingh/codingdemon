@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Image extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['tag_titile','tag_slug'];
+    protected $fillable = [
+        'path',
+    ];
 
-    public function questions()
+    public function question()
     {
-        return $this->belongsToMany(Question::class);
+        return $this->belongsTo(Question::class);
     }
 }

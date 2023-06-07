@@ -13,6 +13,7 @@
     <meta name=keywords
         content="Coding Demon,it programming language,php,laravel 5,jquery,javascript,mysql,git,html,css,MySQL,HTML,CSS,git,AJAX,bootstrap, jQuery,JavaScript,Designing,Demo,codingdemon">
     <meta name="author" content="Coding Demon">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -28,21 +29,7 @@
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{ asset('Frontend_assets/images/favicon.png') }}">
-    <style>
-        /* .question-desc {
 
-            display: -webkit-box;
-            max-width: 800px;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-           
-        } */
-
-
-
-        /* Adjust this value to define the maximum width of the excerpt */
-    </style>
 </head>
 
 <body>
@@ -60,7 +47,7 @@
     </div>
 
     <div class="go-up"><i class="icon-chevron-up"></i></div>
-
+    @stack('script')
     <!-- js -->
     <script src="{{ asset('Frontend_assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('Frontend_assets/js/jquery-ui-1.10.3.custom.min.js') }}"></script>

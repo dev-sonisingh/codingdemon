@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('question_slug')->unique();
             $table->longText('short_description')->nullable();
             $table->longText('question_description')->nullable();
-            $table->bigInteger('category_id')->nullable();
-            $table->bigInteger('tag_id')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();

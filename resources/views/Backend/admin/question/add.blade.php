@@ -66,7 +66,7 @@
                                                 <div class="d-flex flex-wrap justify-content-between mb-2">
                                                     <h5>Image</h5>
                                                 </div>
-                                                <input type="file" id="imageInput" name="image" class="form-control" />
+                                                <input type="file" name="images[]" multiple class="form-control" id="images">
 
                                             </div>
                                         </div>
@@ -77,8 +77,8 @@
                                                     <a class="fw-bold fs--1" href="{{ route('category.show') }}">Add new
                                                         category</a>
                                                 </div>
-                                                <select class="form-select mb-3" data-choices="data-choices" multiple
-                                                    name="categories[]"
+                                                <select class="form-select mb-3" data-choices="data-choices"
+                                                    name="categories[]" multiple
                                                     data-options='{"removeItemButton":true,"placeholder":true}'>
                                                     <option value="">Select categories...</option>
                                                     @foreach ($categories as $category)
@@ -89,6 +89,10 @@
                                                 </select>
                                             </div>
                                         </div>
+                                      
+
+
+
 
                                         <div class="col-12 col-sm-6 col-xl-12">
                                             <div class="mb-4">
@@ -96,9 +100,8 @@
                                                     <h5>Tags</h5>
                                                     <a class="fw-bold fs--1" href="{{ route('tag.show') }}">Add new tag</a>
                                                 </div>
-                                                <select class="form-select" name="tag_id" id="tag_id"
-                                                    data-choices="data-choices" multiple
-                                                    data-options='{"removeItemButton":true,"placeholder":true}'>
+                                                <select class="form-select" data-choices="data-choices" name="tags[]"
+                                                    multiple data-options='{"removeItemButton":true,"placeholder":true}'>
                                                     <option value="">Select tags...</option>
                                                     @foreach ($tags as $tag)
                                                         <option value="{{ $tag->id }}">{{ $tag->tag_title }}

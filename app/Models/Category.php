@@ -9,6 +9,9 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['category_titile','catgeory_slug'];
+
+
     public function questions()
     {
         return $this->belongsToMany(Question::class);

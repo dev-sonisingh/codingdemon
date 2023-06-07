@@ -9,9 +9,12 @@ class Question extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['question_title', 'question_slug'];
+
+
     public function categories()
     {
-        return $this->belongsToMany(Category::class,'category_id','id');
+        return $this->belongsToMany(Category::class);
     }
 
     public function tags()
@@ -19,8 +22,8 @@ class Question extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    // public function images()
-    // {
-    //     return $this->hasMany(Image::class);
-    // }
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }
