@@ -34,13 +34,16 @@
                         You're ready to ask a website-error-related inquiry and this structure will assist with directing
                         you through the interaction.
                     </p>
-
+                    @if (session()->has('success'))
+                    <div class="alert-message success">
+                        <i class="icon-ok"></i>
+                        <p><span>success message</span><br>
+                            {{ session('success') }}</p>
+                    </div>
+                    @endif
                     <div class="form-style form-style-3" id="question-submit">
-                        @if (session()->has('success'))
-                            <div id="myAlert" class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
+                        
+                        
                         <form action="{{route('post.question')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-inputs clearfix">
@@ -56,10 +59,11 @@
                                     <span class="styled-select">
                                         <select name="category">
                                             <option value="">-- select a sategory --</option>
-                                            @foreach ($categories as $item)
-                                                <option value="{{ $item->category_id }}">{{ $item->category_title }}
-                                                </option>
-                                            @endforeach
+                                            @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">
+                                                {{ $category->category_title }}
+                                            </option>
+                                        @endforeach
 
 
 

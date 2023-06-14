@@ -24,7 +24,9 @@ class AskquestionController extends Controller
           $extension = $file->getClientOriginalExtension();
           $filename = time().'.'.$extension;
           $file->move('uploads/query/',$filename);
+          $query->image = $filename;
         }
+        
         $query->description = $request->description;
         $query->description_2 = $request->description_2;
 
