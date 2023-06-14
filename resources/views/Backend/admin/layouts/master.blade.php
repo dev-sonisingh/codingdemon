@@ -51,8 +51,8 @@
     <style>
         #myAlert {
             color: white;
+            
         }
-
         .fadeOut {
             animation: fadeOut 1s ease-in-out forwards;
         }

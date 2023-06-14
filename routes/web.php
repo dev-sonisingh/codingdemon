@@ -24,10 +24,11 @@ Route::get('sign-in',function(){
     return view('Front.sign-in');
 });
 
-Route::get('/', [FrontHomeController::class, 'index']);
+Route::get('/', [FrontHomeController::class, 'index'])->name('home.page');
 
+Route::get('/contact-us', [FrontHomeController::class, 'contactus']);
 Route::get('/questions/{question_slug}', [FrontHomeController::class, 'getQuestion'])->name('get.question');
-Route::get('/ask-question', [AskquestionController::class, 'askQuestion']);
+Route::get('/ask-question', [AskquestionController::class, 'askQuestion'])->name('ask.question');
 Route::post('/ask-question', [AskquestionController::class, 'SubmitQuestion'])->name('post.question');
 
 /*--------------------------------------------
@@ -52,8 +53,12 @@ Route::middleware(['auth', 'isAdmin:admin'])->group(function () {
     Route::get('/admin/dashboard/add-category', [CategoryController::class, 'index'])->name('category.show');
     Route::post('/admin/dashboard/add-category', [CategoryController::class, 'store'])->name('add.category');
     // question
-    Route::get('/admin/dashboard/add-question', [QuestionController::class, 'index'])->name('question.show');
+    Route::get('/admin/dashboard/add-question', [QuestionController::class, 'index'])->name('question.add');
     Route::post('/admin/dashboard/add-question', [QuestionController::class, 'store'])->name('add.question');
+    Route::get('/admin/dashboard/edit-question/{id}', [QuestionController::class, 'edit'])->name('question.edit');
+    Route::get('/admin/dashboard/questions', [QuestionController::class, 'show'])->name('question.show');
+    Route::get('/admin/dashboard/delete-question/{id}', [QuestionController::class, 'destroy'])->name('question.delete');
+
 });
   
 /*------------------------------------------

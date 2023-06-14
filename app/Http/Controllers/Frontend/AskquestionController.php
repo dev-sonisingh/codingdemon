@@ -16,6 +16,9 @@ class AskquestionController extends Controller
 
 
     public function SubmitQuestion(Request $request){
+
+
+        
         $query = new Query;
         $query->title = $request->title;
         $query->category = $request->category;

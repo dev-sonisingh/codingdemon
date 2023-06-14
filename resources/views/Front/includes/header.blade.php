@@ -1,17 +1,16 @@
-
-
 <div id="header-top">
     <section class="container clearfix">
         <nav class="header-top-nav">
             <ul>
                 <li><a href="contact_us.html"><i class="icon-envelope"></i>Contact</a></li>
                 <li><a href="#"><i class="icon-headphones"></i>Support</a></li>
-                <li><a href="{{url('sign-in')}}"><i class="icon-user"></i>Login</a></li>
+                <li><a href="{{ url('sign-in') }}"><i class="icon-user"></i>Login</a></li>
             </ul>
         </nav>
         <div class="header-search">
             <form>
-                <input type="text" value="Search here ..." onfocus="if(this.value=='Search here ...')this.value='';" onblur="if(this.value=='')this.value='Search here ...';">
+                <input type="text" value="Search here ..." onfocus="if(this.value=='Search here ...')this.value='';"
+                    onblur="if(this.value=='')this.value='Search here ...';">
                 <button type="submit" class="search-submit"></button>
             </form>
         </div>
@@ -19,15 +18,19 @@
 </div><!-- End header-top -->
 <header id="header">
     <section class="container clearfix">
-        <div class="logo"><a href="index.html"><img alt="" src="{{asset('Frontend_assets/images/logo.png')}}"></a></div>
+        <div class="logo"><a href="index.html"><img alt=""
+                    src="{{ asset('Frontend_assets/images/logo.png') }}"></a></div>
         <nav class="navigation">
             <ul>
-                <li class="current_page_item"><a href="index.html">Home</a>
-                   
+                <li class="{{ request()->routeIs('home.page') ? 'current_page_item' : '' }}"><a
+                        href="{{ route('home.page') }}">Home</a>
+
                 </li>
-                <li class="ask_question"><a href="ask_question.html">Ask Question</a></li>
-                <li><a href="cat_question.html">Questions</a>
+                <li class="{{ request()->routeIs('ask.question') ? 'current_page_item' : '' }} ask_question"><a
+                        href="{{ route('ask.question') }}">Ask Question</a></li>
+                <li><a href="cat_question.html">Categories</a>
                     <ul>
+                        
                         <li><a href="cat_question.html">Questions Category</a></li>
                         <li><a href="single_question.html">Question Single</a></li>
                         <li><a href="single_question_poll.html">Poll Question Single</a></li>

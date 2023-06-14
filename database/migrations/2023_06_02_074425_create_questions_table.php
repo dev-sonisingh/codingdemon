@@ -27,7 +27,8 @@ return new class extends Migration
             $table->string('image_title')->nullable();
             $table->string('image_alt_text')->nullable();
             $table->tinyInteger('status')->default(0);
-            $table->string('Author');
+            $table->integer('views')->nullable();
+            $table->string('Author')->default('Coding Demon');
             $table->timestamps();
         });
     }

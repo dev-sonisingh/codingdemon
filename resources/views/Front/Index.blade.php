@@ -43,50 +43,60 @@
                     </ul>
                     <div class="tab-inner-warp">
                         <div class="tab-inner">
-                            @foreach ($questions as $item)
-                                <article class="question question-type-normal">
-                                    <h2>
-                                        <a href="{{('questions/'.$item->question_slug)}}">{{ $item->question_title }}</a>
-                                    </h2>
-                                    <a class="question-report" href="#">Report</a>
-                                    <div class="question-type-main"><i class="icon-question-sign"></i>Question</div>
-                                    <div class="question-author">
-                                        <a href="#" original-title="ahmed"
-                                            class="question-author-img tooltip-n"><span></span><img alt=""
-                                                src="{{ asset('Frontend_assets/ask-me/images/demo/avatar.png') }}"></a>
-                                    </div>
-                                    <div class="question-inner">
-                                        <div class="question-desc">
-                                            {!!$item->question_description!!} </div>
-                                        <div class="question-details">
-                                            <span class="question-answered question-answered-done"><i
-                                                    class="icon-ok"></i>solved</span>
-                                            <span class="question-favorite"><i class="icon-star"></i>5</span>
+                         @if ($questions->count() > 0)
+                                @foreach ($questions as $item)
+                                    <article class="question question-type-normal">
+                                        <h2>
+                                            <a
+                                                href="{{ 'questions/' . $item->question_slug }}">{{ $item->question_title }}</a>
+                                        </h2>
+                                        <a class="question-report" href="#">Report</a>
+                                        <div class="question-type-main"><i class="icon-question-sign"></i>Question</div>
+                                        <div class="question-author">
+                                            <a href="#" original-title="ahmed"
+                                                class="question-author-img tooltip-n"><span></span><img alt=""
+                                                    src="{{ asset('Frontend_assets/ask-me/images/demo/avatar.png') }}"></a>
                                         </div>
-                                        <span class="question-category"><a href="#"><i class="icon-folder-close"></i>
-                                               
-                                              
-                                                {{ $item->categories->pluck('category_title')->implode(', ') }} 
+                                        <div class="question-inner">
+                                            <div class="question-desc">
+                                                {!! $item->question_description !!} </div>
+                                            <div class="question-details">
+                                                <span class="question-answered question-answered-done"><i
+                                                        class="icon-ok"></i>solved</span>
+                                                <span class="question-favorite"><i class="icon-star"></i>5</span>
+                                            </div>
+                                            <span class="question-category"><a href="#"><i
+                                                        class="icon-folder-close"></i>
 
-                                            </a>
-                                        </span>
-                                        <span class="question-date"><i
-                                                class="icon-time"></i>{{ $item->created_at->diffForHumans() }}</span>
-                                        <span class="question-comment"><a href="#"><i class="icon-comment"></i>
-                                                 {{ $item->tags->pluck('tag_title')->implode(', ') }} 
-                                            </a></span>
-                                        {{-- 
-                                            @foreach ($product->images as $image)
-                                            <li><img src="{{ asset($image->path) }}" alt="Product Image"></li>
-                                        @endforeach --}}
 
-                                        <span class="question-view"><i class="icon-user"></i>70 views</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </article>
-                            @endforeach
+                                                    {{ $item->categories->pluck('category_title')->implode(', ') }}
 
-                            <a href="#" class="load-questions"><i class="icon-refresh"></i>Load More Questions</a>
+                                                </a>
+                                            </span>
+                                            <span class="question-date"><i
+                                                    class="icon-time"></i>{{ $item->created_at->diffForHumans() }}</span>
+                                            <span class="question-comment"><a href="#"><i class="icon-comment"></i>
+                                                    {{ $item->tags->pluck('tag_title')->implode(', ') }}
+                                                </a></span>
+                                                      {{-- 
+                                                      @foreach ($product->images as $image)
+                                                   <li><img src="{{ asset($image->path) }}" alt="Product Image"></li>
+                                                     @endforeach --}}
+
+                                            <span class="question-view"><i class="icon-user"></i>70 views</span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </article>
+                                @endforeach
+                        
+                             
+                         @else
+                             <p>No questions found</p>
+                         @endif
+
+
+
+                            {{-- <a href="#" class="load-questions"><i class="icon-refresh"></i>Load More Questions</a> --}}
                         </div>
                     </div>
                     <div class="tab-inner-warp">

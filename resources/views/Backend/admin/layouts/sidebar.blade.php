@@ -16,36 +16,31 @@
                             <div class="d-flex align-items-center">
                                 <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
                                     class="nav-link-icon"><span data-feather="pie-chart"></span></span><span
-                                    class="nav-link-text">Product</span>
+                                    class="nav-link-text">Question</span>
                             </div>
                         </a>
                         <div class="parent-wrapper label-1">
                             <ul class="nav collapse parent show" data-bs-parent="#navbarVerticalCollapse"
                                 id="home">
 
-                                <li class="nav-item"><a class="nav-link active" href=""
+                                <li class="nav-item"><a class="nav-link active" href="{{route('category.show')}}"
                                         data-bs-toggle="" aria-expanded="false">
                                         <div class="d-flex align-items-center"><span class="nav-link-text">
                                                 Category</span></div>
                                     </a><!-- more inner pages-->
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href=""
-                                        data-bs-toggle="" aria-expanded="false">
-                                        <div class="d-flex align-items-center"><span class="nav-link-text">Brands
-                                            </span></div>
-                                    </a><!-- more inner pages-->
-                                </li>
+                              
 
-                                <li class="nav-item"><a class="nav-link" href=""
+                                <li class="nav-item"><a class="nav-link" href="{{route('tag.show')}}"
                                         data-bs-toggle="" aria-expanded="false">
                                         <div class="d-flex align-items-center"><span class="nav-link-text">Tags
                                             </span></div>
                                     </a>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href=""
+                                <li class="nav-item"><a class="nav-link" href="{{route('question.show')}}"
                                         data-bs-toggle="" aria-expanded="false">
                                         <div class="d-flex align-items-center"><span
-                                                class="nav-link-text">Products</span></div>
+                                                class="nav-link-text">Questions</span></div>
                                     </a>
                                 </li>
                             </ul>

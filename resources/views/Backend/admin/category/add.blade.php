@@ -91,7 +91,7 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($tags as $item)
+                                    @foreach ($category as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->category_title }}</td>
@@ -103,7 +103,7 @@
                                                     onclick="return confirmDelete();"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
 
