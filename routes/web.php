@@ -26,7 +26,7 @@ Route::get('sign-in',function(){
 
 Route::get('/', [FrontHomeController::class, 'index'])->name('home.page');
 
-Route::get('/contact-us', [FrontHomeController::class, 'contactus']);
+Route::get('/contact-us', [FrontHomeController::class, 'contactus'])->name('contact_us');
 Route::get('/questions/{question_slug}', [FrontHomeController::class, 'getQuestion'])->name('get.question');
 Route::get('/ask-question', [AskquestionController::class, 'askQuestion'])->name('ask.question');
 Route::post('/ask-question', [AskquestionController::class, 'SubmitQuestion'])->name('post.question');
@@ -56,6 +56,8 @@ Route::middleware(['auth', 'isAdmin:admin'])->group(function () {
     Route::get('/admin/dashboard/add-question', [QuestionController::class, 'index'])->name('question.add');
     Route::post('/admin/dashboard/add-question', [QuestionController::class, 'store'])->name('add.question');
     Route::get('/admin/dashboard/edit-question/{id}', [QuestionController::class, 'edit'])->name('question.edit');
+    Route::post('/admin/dashboard/edit-question', [QuestionController::class, 'update'])->name('question.update');
+
     Route::get('/admin/dashboard/questions', [QuestionController::class, 'show'])->name('question.show');
     Route::get('/admin/dashboard/delete-question/{id}', [QuestionController::class, 'destroy'])->name('question.delete');
 

@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use App\Http\Controllers\Controller; 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\Image;
 use App\Models\Question;
 
 class QuestionController extends Controller
@@ -66,7 +67,8 @@ class QuestionController extends Controller
       
         if (!empty($images)) {
             foreach ($images as $image) {
-                $path = $image->store('question_images');
+                $path = $image->Store('question_images');
+               
                 $question->images()->create(['path' => $path]);
             }
         }
@@ -76,10 +78,19 @@ class QuestionController extends Controller
         return redirect()->back();
     }
     public function edit($id)
-    {
-        $question = Question::find($id);
-        return view('Backend.admin.question.edit', compact('question'));
+    {   
+        $question = Question::findOrFail($id);
+        $categories = Category::all();
+        $tags = Tag::all();   
+        $images = $question->images;
+
+        
+        return view('Backend.admin.question.edit', compact('question','categories','tags','images'));
     }
+
+
+   
+
     public function show(){
      
         $questions = Question::all();

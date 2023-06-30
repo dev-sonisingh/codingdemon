@@ -66,6 +66,8 @@
     <script src="{{ asset('Frontend_assets/js/tags.js') }}"></script>
     <script src="{{ asset('Frontend_assets/js/jquery.bxslider.min.js') }}"></script>
     <script src="{{ asset('Frontend_assets/js/custom.js') }}"></script>
+
+    
     <!-- End js -->
 
 </body>

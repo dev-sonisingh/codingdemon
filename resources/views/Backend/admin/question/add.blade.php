@@ -75,7 +75,7 @@
                                                 <div class="d-flex flex-wrap justify-content-between mb-2">
                                                     <h5>Meta keyword</h5>
                                                 </div>
-                                                <input type="text" id="meta_keyword" name="meta_keyword"
+                                                <input type="text" id="meta_keyword" name="meta_keywords"
                                                     class="form-control"
                                                     placeholder="Enter keyword separated by commas" />
                                             </div>

@@ -26,7 +26,7 @@
         <div class="col-md-9">
             <article class="question single-question question-type-normal">
                 <h2>
-                    <a href="single_question.html">{{$question->question_title}}</a>
+                    <a href="{{ '/questions/' . $question->question_slug }}">{{$question->question_title}}</a>
                 </h2>
                 <a class="question-report" href="#">Report</a>
                 <div class="question-type-main"><i class="icon-question-sign"></i>Question</div>

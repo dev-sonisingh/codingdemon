@@ -203,14 +203,14 @@
                                                 class="fas fa-ellipsis-h fs--2"></span></button>
                                         <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item"
                                                 href="#!">View</a><a class="dropdown-item"
-                                                href="#!">Export</a>
+                                                href="{{ 'edit-question/' . $item->id }}">Edit</a>
                                             <div class="dropdown-divider"></div><a class="dropdown-item text-danger"
                                                 href="{{ 'delete-question/' . $item->id }}">Remove</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                        @endforeach
+                            @endforeach
                             @else
                               
                             @endif

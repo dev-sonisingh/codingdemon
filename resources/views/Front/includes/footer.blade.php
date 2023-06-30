@@ -21,15 +21,15 @@
                 <div class="widget">
                     <h3 class="widget_title">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="ask_question.html">Ask Question</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{{route('ask.question')}}">Ask Question</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="cat_question.html">Questions</a></li>
-                        <li><a href="user_profile.html">Users</a></li>
-                        <li><a href="blog_1.html">Blog</a></li>
-                        <li><a href="right_sidebar.html">Pages</a></li>
-                        <li><a href="shortcodes.html">Shortcodes</a></li>
-                        <li><a href="contact_us.html">Contact Us</a></li>
+                        <li><a href="#">Questions</a></li>
+                        <li><a href="#">Users</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Shortcodes</a></li>
+                        <li><a href="{{route('contact_us')}}">Contact Us</a></li>
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
