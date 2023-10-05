@@ -3,17 +3,18 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="widget widget_contact">
-                    <h3 class="widget_title">Where We Are ?</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu.</p>
+                    <h3 class="widget_title">Why We Are ?</h3>
+                    <p>The name "Coding Demon" conveys a sense of mastery and expertise in the realm of programming and
+                        technology. It suggests that the entity or organization using this name is highly skilled and
+                        capable in the world of coding and software development. </p>
                     <ul>
                         <li>
-                            <span>Address :</span>
-                            Ask Me Network, 33 Street, syada Zeinab, Cairo, Egypt.
+                            <span>Support </span>
+
                         </li>
-                        <li>
-                            <span>Support :</span>Support Telephone No : (+2)01111011110
-                        </li>
-                        <li>Support Email Account : info@example.com</li>
+                        <li>Located : Delhi, India</li>
+
+                        <li>Support Email : support@codingdemon.com</li>
                     </ul>
                 </div>
             </div>
@@ -22,19 +23,16 @@
                     <h3 class="widget_title">Quick Links</h3>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="{{route('ask.question')}}">Ask Question</a></li>
+                        <li><a href="{{ route('ask.question') }}">Ask Question</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Questions</a></li>
-                        <li><a href="#">Users</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Shortcodes</a></li>
-                        <li><a href="{{route('contact_us')}}">Contact Us</a></li>
+                        <li><a href="{{ route('contact_us') }}">Contact Us</a></li>
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-3">
+            {{-- <div class="col-md-3">
                 <div class="widget">
                     <h3 class="widget_title">Popular Questions</h3>
                     <ul class="related-posts">
@@ -49,12 +47,12 @@
                             <div class="clear"></div><span>Feb 22, 2014</span>
                         </li>
                     </ul>
-                </div>	
-            </div>
+                </div>
+            </div> --}}
             <div class="col-md-3">
                 <div class="widget widget_twitter">
-                    <h3 class="widget_title">Latest Tweets</h3>
-                    <div class="tweet_1"></div>
+                    <h3 class="widget_title">Coding Demon</h3>
+                    <div class=""> </div>
                 </div>
             </div>
         </div><!-- End row -->
@@ -62,16 +60,25 @@
 </footer><!-- End footer -->
 <footer id="footer-bottom">
     <section class="container">
-        <div class="copyrights f_left">Copyright 2014 Ask me | <a href="#">By 2code</a></div>
+        <div class="copyrights f_left">Copyright 2023 | Coding Demon | <a href="https://codingdemon.com">By Coding Demon
+            </a></div>
         <div class="social_icons f_right">
             <ul>
-                <li class="twitter"><a original-title="Twitter" class="tooltip-n" href="#"><i class="social_icon-twitter font17"></i></a></li>
-                <li class="facebook"><a original-title="Facebook" class="tooltip-n" href="#"><i class="social_icon-facebook font17"></i></a></li>
-                <li class="gplus"><a original-title="Google plus" class="tooltip-n" href="#"><i class="social_icon-gplus font17"></i></a></li>
-                <li class="youtube"><a original-title="Youtube" class="tooltip-n" href="#"><i class="social_icon-youtube font17"></i></a></li>
-                <li class="skype"><a original-title="Skype" class="tooltip-n" href="skype:#?call"><i class="social_icon-skype font17"></i></a></li>
-                <li class="flickr"><a original-title="Flickr" class="tooltip-n" href="#"><i class="social_icon-flickr font17"></i></a></li>
-                <li class="rss"><a original-title="Rss" class="tooltip-n" href="#"><i class="social_icon-rss font17"></i></a></li>
+
+                <li class="facebook"><a original-title="Facebook" class="tooltip-n"
+                        href="https://www.facebook.com/profile.php?id=61551699864599"><i
+                            class="social_icon-facebook font17"></i></a></li>
+                <li class="gplus"><a original-title="Google plus" class="tooltip-n"
+                        href="https://www.google.com/search?q=coding+demon"><i class="social_icon-gplus font17"></i></a>
+                </li>
+                <li class="youtube"><a original-title="Youtube" class="tooltip-n"
+                        href="https://www.youtube.com/channel/UC83wGg4Rdob7u9Ue4cx3PHQ"><i
+                            class="social_icon-youtube font17"></i></a></li>
+
+                <li class="instagram"><a original-title="Instagram" class="tooltip-n"
+                        href="https://www.instagram.com/codingdemon_"><i class="social_icon-instagram font17"></i></a>
+                </li>
+
             </ul>
         </div><!-- End social_icons -->
     </section><!-- End container -->

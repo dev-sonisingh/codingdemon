@@ -89,7 +89,63 @@ class QuestionController extends Controller
     }
 
 
-   
+    public function update(Request $request)
+    {
+        $question = Question::find($request->id);
+    
+        $question->question_title = $request->question_title;
+        
+        $question->question_slug = Str::slug($request->question_slug);
+        $question->short_description = $request->short_description;
+        $question->question_description = $request->question_description;
+        $question->meta_title = $request->meta_title;
+        $question->meta_description = $request->meta_description;
+        $question->meta_keywords = $request->meta_keywords;
+        $question->no_index = $request->has('no_index') ? true : false;
+        $question->Author = 'CodingDemon';
+    
+        // if($request->hasfile('image')){
+        //     $file = $request->file('image');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $file->move('uploads/question/',$filename);
+        //     $question->image = $filename;           
+        // }
+        if ($request->hasfile('image')) {
+            $destination = 'uploads/question/' . $question->image;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('uploads/question/', $filename);
+            $question->image = $filename;
+        }
+
+        $question->image_title = $request->image_title;
+        $question->image_alt_text = $request->image_alt_text;
+        $question->update();
+    
+        $categoryIds = $request->input('categories', []);
+        $question->categories()->sync($categoryIds);
+    
+        $tagIds = $request->input('tags', []);
+        $question->tags()->sync($tagIds);
+    
+        $images = $request->file('images');
+    
+        if (!empty($request->images)) {
+            foreach ($request->images as $image) {
+                $path = $image->store('question_images'); // This will store the image and return the path.
+    
+                $question->images()->create(['path' => $path]);
+            }
+        }
+    
+        session()->flash('success', 'Question updated successfully.');
+        return redirect()->back();
+    }   
 
     public function show(){
      

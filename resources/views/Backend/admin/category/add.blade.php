@@ -44,16 +44,17 @@
                     <div class="card-body p-0">
 
                         <div class="p-4 code-to-copy">
-                            <form action="{{route('add.category')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('add.category') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    
-                                    <input class="form-control" name="category_title" type="text" placeholder="CATEGORY NAME" />
+
+                                    <input class="form-control" name="category_title" type="text"
+                                        placeholder="CATEGORY NAME" />
                                 </div>
                                 <div class="mb-3">
-                                    
-                                    <input class="form-control" name="category_slug" type="text" placeholder="CATEGORY SLUG"
-                                        required />
+
+                                    <input class="form-control" name="category_slug" type="text"
+                                        placeholder="CATEGORY SLUG" required />
                                 </div>
 
                                 <button class="btn btn-primary" name="save_category" type="submit">Publish</button>
@@ -97,9 +98,9 @@
                                             <td>{{ $item->category_title }}</td>
                                             <td>{{ $item->category_slug }}</td>
                                             <td>{{ $item->created_at->format('d/m/y') }}</td>
-                                            <td><a href="{{ 'edit-tag/' . $item->id }}"><i class="far fa-edit"></i></a>
+                                            <td><a href="{{ 'edit-catgeory/' . $item->id }}"><i class="far fa-edit"></i></a>
                                                 &nbsp;&nbsp;&nbsp;
-                                                <a href="{{ 'delete-tag/' . $item->id }}"
+                                                <a href="{{ 'delete-category/' . $item->id }}"
                                                     onclick="return confirmDelete();"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>

@@ -18,19 +18,19 @@ class UserSeeder extends Seeder
         $users = [
             [
                'name'=>'Admin User',
-               'email'=>'admin@itsolutionstuff.com',
+               'email'=>'admin@codingdemon.com',
                'type'=>1,
                'password'=> bcrypt('123456'),
             ],
             [
                'name'=>'Manager User',
-               'email'=>'manager@itsolutionstuff.com',
+               'email'=>'manager@codingdemon.com',
                'type'=> 2,
                'password'=> bcrypt('123456'),
             ],
             [
                'name'=>'User',
-               'email'=>'user@itsolutionstuff.com',
+               'email'=>'user@codingdemon.com',
                'type'=>0,
                'password'=> bcrypt('123456'),
             ],
@@ -41,4 +41,3 @@ class UserSeeder extends Seeder
         }
     }
 }
-

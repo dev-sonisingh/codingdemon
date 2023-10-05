@@ -49,9 +49,13 @@ Route::middleware(['auth', 'isAdmin:admin'])->group(function () {
     // tags
     Route::get('/admin/dashboard/add-tag', [TagController::class, 'index'])->name('tag.show');
     Route::post('/admin/dashboard/add-tag', [TagController::class, 'store'])->name('add.tag');
+    Route::get('/admin/dashboard/delete-tag/{id}', [TagController::class, 'destroy'])->name('delete.tag');
+
     // category
     Route::get('/admin/dashboard/add-category', [CategoryController::class, 'index'])->name('category.show');
     Route::post('/admin/dashboard/add-category', [CategoryController::class, 'store'])->name('add.category');
+    Route::get('/admin/dashboard/delete-category/{id}', [CategoryController::class, 'destroy'])->name('delete.category');
+
     // question
     Route::get('/admin/dashboard/add-question', [QuestionController::class, 'index'])->name('question.add');
     Route::post('/admin/dashboard/add-question', [QuestionController::class, 'store'])->name('add.question');
@@ -60,6 +64,8 @@ Route::middleware(['auth', 'isAdmin:admin'])->group(function () {
 
     Route::get('/admin/dashboard/questions', [QuestionController::class, 'show'])->name('question.show');
     Route::get('/admin/dashboard/delete-question/{id}', [QuestionController::class, 'destroy'])->name('question.delete');
+    Route::get('/admin/dashboard/edit-question/{id}', [QuestionController::class, 'edit'])->name('question.edit');
+    Route::post('/admin/dashboard/edit-question', [QuestionController::class, 'update'])->name('question.update');
 
 });
   
